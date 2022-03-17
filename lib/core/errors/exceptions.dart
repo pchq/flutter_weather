@@ -4,9 +4,9 @@ part 'exceptions.freezed.dart';
 
 @freezed
 class AppException with _$AppException implements Exception {
-  const factory AppException.server([String? error]) = ServerException;
-  const factory AppException.dataParsing([String? error]) = DataParsingException;
-  const factory AppException.noConnection([String? error]) = NoConnectionException;
-  const factory AppException.auth([String? error]) = AuthException;
-  const factory AppException.geoLocation([String? error]) = GeoLocationException;
+  const factory AppException.server([Object? error]) = ServerException;
+  const factory AppException.dataParsing([Object? error]) = DataParsingException;
+  const factory AppException.noConnection([Object? error]) = NoConnectionException;
+  const factory AppException.auth([Object? error]) = AuthException;
+  const factory AppException.geoLocation([Object? error]) = GeoLocationException;
 }

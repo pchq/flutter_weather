@@ -1,4 +1,6 @@
 import 'dart:developer';
+import '/core/localization/generated/l10n.dart';
+
 import 'exceptions.dart';
 
 class ErrorObject {
@@ -9,27 +11,30 @@ class ErrorObject {
     this.exception,
   ) {
     log('== exception: $exception');
-    // todo
     if (exception is AppException) {
       (exception as AppException).when(
-        server: (message) {},
-        dataParsing: (message) {},
-        noConnection: (message) {},
-        auth: (message) {},
-        geoLocation: (message) {},
+        server: (error) {
+          message = I10n.current.errServer;
+        },
+        dataParsing: (error) {
+          message = I10n.current.errDataParsing;
+        },
+        noConnection: (error) {
+          message = I10n.current.errConnection;
+        },
+        auth: (error) {
+          message = I10n.current.errAuth;
+        },
+        geoLocation: (error) {
+          if (error is String) {
+            message = error;
+          } else {
+            message = I10n.current.errUnknown;
+          }
+        },
       );
     } else {
-      // todo: message = 'unknown errro';
-
-      if (exception is ServerException) {
-        message = 'Ошибка сервера';
-      } else if (exception is DataParsingException) {
-        message = 'Ошибка данных';
-      } else if (exception is NoConnectionException) {
-        message = 'Ошибка соединения';
-      } else if (exception is AuthException) {
-        message = 'Ошибка авторизации';
-      }
+      message = I10n.current.errUnknown;
     }
   }
 }

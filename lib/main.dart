@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import '/core/localization/generated/l10n.dart';
+import '/core/service_provider.dart';
 import '/l_presentation/app_theme.dart';
 import '/l_domain/bloc/weather/weather_cubit.dart';
 import '/routing/app_router.dart';
-import '/core/service_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,15 +32,12 @@ class MyApp extends StatelessWidget {
         routeInformationParser: _serviceProvider.get<AppRouter>().defaultRouteParser(),
         routerDelegate: _serviceProvider.get<AppRouter>().delegate(),
         localizationsDelegates: const [
-          AppLocalizations.delegate,
+          I10n.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: const [
-          Locale('en', ''),
-          Locale('ru', ''),
-        ],
+        supportedLocales: I10n.delegate.supportedLocales,
       ),
     );
   }

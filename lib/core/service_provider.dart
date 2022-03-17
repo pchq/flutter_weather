@@ -1,12 +1,12 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:weather/l_data/datasources/local_datasource.dart';
-import 'package:weather/l_data/datasources/remote_datasource.dart';
-import 'package:weather/l_data/repositories/weather_repository.dart';
-import 'package:weather/l_data/services/network_info.dart';
-import 'package:weather/l_domain/bloc/weather/weather_cubit.dart';
-import 'package:weather/l_domain/repositories/i_weather_repository.dart';
+import '/l_data/datasources/local_datasource.dart';
+import '/l_data/datasources/remote_datasource.dart';
+import '/l_data/repositories/weather_repository.dart';
+import '/l_data/services/network_info.dart';
+import '/l_domain/bloc/weather/weather_cubit.dart';
+import '/l_domain/repositories/i_weather_repository.dart';
 
 import '/routing/app_router.dart';
 

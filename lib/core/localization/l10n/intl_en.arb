@@ -1,0 +1,29 @@
+{
+    "hourly": "Hourly",
+    "daily": "Daily",
+    "temp": "Daytime",
+    "tempNight": "Nighttime",
+    "feelsLike": "Feels like daytime",
+    "feelsLikeNight": "Feels like nighttime",
+    "pressure": "Pressure",
+    "humidity": "Humidity",
+    "dewPoint": "Dew point",
+    "windSpeed": "Wind Speed",
+    "settings": "Settings",
+    
+    // errors
+    "errServer": "Server error",
+    "errDataParsing": "Data error",
+    "errConnection": "Connection error",
+    "errAuth": "Authorization error",
+    "errUnknown": "Unknown error",
+    "errGeoLocService": "Location services are disabled",
+    "errGeoLocPermissionDenied": "Location permissions are denied",
+    "errGeoLocPermissionDeniedForever": "Location permissions are permanently denied, we cannot request permissions",
+    
+    "": "",
+
+
+
+    "_": ""
+}

@@ -18,31 +18,31 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AppExceptionTearOff {
   const _$AppExceptionTearOff();
 
-  ServerException server([String? error]) {
+  ServerException server([Object? error]) {
     return ServerException(
       error,
     );
   }
 
-  DataParsingException dataParsing([String? error]) {
+  DataParsingException dataParsing([Object? error]) {
     return DataParsingException(
       error,
     );
   }
 
-  NoConnectionException noConnection([String? error]) {
+  NoConnectionException noConnection([Object? error]) {
     return NoConnectionException(
       error,
     );
   }
 
-  AuthException auth([String? error]) {
+  AuthException auth([Object? error]) {
     return AuthException(
       error,
     );
   }
 
-  GeoLocationException geoLocation([String? error]) {
+  GeoLocationException geoLocation([Object? error]) {
     return GeoLocationException(
       error,
     );
@@ -54,33 +54,33 @@ const $AppException = _$AppExceptionTearOff();
 
 /// @nodoc
 mixin _$AppException {
-  String? get error => throw _privateConstructorUsedError;
+  Object? get error => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,7 +123,7 @@ abstract class $AppExceptionCopyWith<$Res> {
   factory $AppExceptionCopyWith(
           AppException value, $Res Function(AppException) then) =
       _$AppExceptionCopyWithImpl<$Res>;
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -139,10 +139,7 @@ class _$AppExceptionCopyWithImpl<$Res> implements $AppExceptionCopyWith<$Res> {
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error: error == freezed ? _value.error : error,
     ));
   }
 }
@@ -154,7 +151,7 @@ abstract class $ServerExceptionCopyWith<$Res>
           ServerException value, $Res Function(ServerException) then) =
       _$ServerExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -173,10 +170,7 @@ class _$ServerExceptionCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(ServerException(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error == freezed ? _value.error : error,
     ));
   }
 }
@@ -187,7 +181,7 @@ class _$ServerException implements ServerException {
   const _$ServerException([this.error]);
 
   @override
-  final String? error;
+  final Object? error;
 
   @override
   String toString() {
@@ -214,11 +208,11 @@ class _$ServerException implements ServerException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) {
     return server(error);
   }
@@ -226,11 +220,11 @@ class _$ServerException implements ServerException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) {
     return server?.call(error);
   }
@@ -238,11 +232,11 @@ class _$ServerException implements ServerException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -293,10 +287,10 @@ class _$ServerException implements ServerException {
 }
 
 abstract class ServerException implements AppException {
-  const factory ServerException([String? error]) = _$ServerException;
+  const factory ServerException([Object? error]) = _$ServerException;
 
   @override
-  String? get error;
+  Object? get error;
   @override
   @JsonKey(ignore: true)
   $ServerExceptionCopyWith<ServerException> get copyWith =>
@@ -310,7 +304,7 @@ abstract class $DataParsingExceptionCopyWith<$Res>
           $Res Function(DataParsingException) then) =
       _$DataParsingExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -329,10 +323,7 @@ class _$DataParsingExceptionCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(DataParsingException(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error == freezed ? _value.error : error,
     ));
   }
 }
@@ -343,7 +334,7 @@ class _$DataParsingException implements DataParsingException {
   const _$DataParsingException([this.error]);
 
   @override
-  final String? error;
+  final Object? error;
 
   @override
   String toString() {
@@ -371,11 +362,11 @@ class _$DataParsingException implements DataParsingException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) {
     return dataParsing(error);
   }
@@ -383,11 +374,11 @@ class _$DataParsingException implements DataParsingException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) {
     return dataParsing?.call(error);
   }
@@ -395,11 +386,11 @@ class _$DataParsingException implements DataParsingException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) {
     if (dataParsing != null) {
@@ -450,10 +441,10 @@ class _$DataParsingException implements DataParsingException {
 }
 
 abstract class DataParsingException implements AppException {
-  const factory DataParsingException([String? error]) = _$DataParsingException;
+  const factory DataParsingException([Object? error]) = _$DataParsingException;
 
   @override
-  String? get error;
+  Object? get error;
   @override
   @JsonKey(ignore: true)
   $DataParsingExceptionCopyWith<DataParsingException> get copyWith =>
@@ -467,7 +458,7 @@ abstract class $NoConnectionExceptionCopyWith<$Res>
           $Res Function(NoConnectionException) then) =
       _$NoConnectionExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -486,10 +477,7 @@ class _$NoConnectionExceptionCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(NoConnectionException(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error == freezed ? _value.error : error,
     ));
   }
 }
@@ -500,7 +488,7 @@ class _$NoConnectionException implements NoConnectionException {
   const _$NoConnectionException([this.error]);
 
   @override
-  final String? error;
+  final Object? error;
 
   @override
   String toString() {
@@ -528,11 +516,11 @@ class _$NoConnectionException implements NoConnectionException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) {
     return noConnection(error);
   }
@@ -540,11 +528,11 @@ class _$NoConnectionException implements NoConnectionException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) {
     return noConnection?.call(error);
   }
@@ -552,11 +540,11 @@ class _$NoConnectionException implements NoConnectionException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -607,11 +595,11 @@ class _$NoConnectionException implements NoConnectionException {
 }
 
 abstract class NoConnectionException implements AppException {
-  const factory NoConnectionException([String? error]) =
+  const factory NoConnectionException([Object? error]) =
       _$NoConnectionException;
 
   @override
-  String? get error;
+  Object? get error;
   @override
   @JsonKey(ignore: true)
   $NoConnectionExceptionCopyWith<NoConnectionException> get copyWith =>
@@ -625,7 +613,7 @@ abstract class $AuthExceptionCopyWith<$Res>
           AuthException value, $Res Function(AuthException) then) =
       _$AuthExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -643,10 +631,7 @@ class _$AuthExceptionCopyWithImpl<$Res> extends _$AppExceptionCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(AuthException(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error == freezed ? _value.error : error,
     ));
   }
 }
@@ -657,7 +642,7 @@ class _$AuthException implements AuthException {
   const _$AuthException([this.error]);
 
   @override
-  final String? error;
+  final Object? error;
 
   @override
   String toString() {
@@ -684,11 +669,11 @@ class _$AuthException implements AuthException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) {
     return auth(error);
   }
@@ -696,11 +681,11 @@ class _$AuthException implements AuthException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) {
     return auth?.call(error);
   }
@@ -708,11 +693,11 @@ class _$AuthException implements AuthException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -763,10 +748,10 @@ class _$AuthException implements AuthException {
 }
 
 abstract class AuthException implements AppException {
-  const factory AuthException([String? error]) = _$AuthException;
+  const factory AuthException([Object? error]) = _$AuthException;
 
   @override
-  String? get error;
+  Object? get error;
   @override
   @JsonKey(ignore: true)
   $AuthExceptionCopyWith<AuthException> get copyWith =>
@@ -780,7 +765,7 @@ abstract class $GeoLocationExceptionCopyWith<$Res>
           $Res Function(GeoLocationException) then) =
       _$GeoLocationExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String? error});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -799,10 +784,7 @@ class _$GeoLocationExceptionCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(GeoLocationException(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      error == freezed ? _value.error : error,
     ));
   }
 }
@@ -813,7 +795,7 @@ class _$GeoLocationException implements GeoLocationException {
   const _$GeoLocationException([this.error]);
 
   @override
-  final String? error;
+  final Object? error;
 
   @override
   String toString() {
@@ -841,11 +823,11 @@ class _$GeoLocationException implements GeoLocationException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? error) server,
-    required TResult Function(String? error) dataParsing,
-    required TResult Function(String? error) noConnection,
-    required TResult Function(String? error) auth,
-    required TResult Function(String? error) geoLocation,
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
   }) {
     return geoLocation(error);
   }
@@ -853,11 +835,11 @@ class _$GeoLocationException implements GeoLocationException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
   }) {
     return geoLocation?.call(error);
   }
@@ -865,11 +847,11 @@ class _$GeoLocationException implements GeoLocationException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? error)? server,
-    TResult Function(String? error)? dataParsing,
-    TResult Function(String? error)? noConnection,
-    TResult Function(String? error)? auth,
-    TResult Function(String? error)? geoLocation,
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
     required TResult orElse(),
   }) {
     if (geoLocation != null) {
@@ -920,10 +902,10 @@ class _$GeoLocationException implements GeoLocationException {
 }
 
 abstract class GeoLocationException implements AppException {
-  const factory GeoLocationException([String? error]) = _$GeoLocationException;
+  const factory GeoLocationException([Object? error]) = _$GeoLocationException;
 
   @override
-  String? get error;
+  Object? get error;
   @override
   @JsonKey(ignore: true)
   $GeoLocationExceptionCopyWith<GeoLocationException> get copyWith =>

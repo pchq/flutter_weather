@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '/core/localization/generated/l10n.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/l_presentation/app_theme.dart';
 
@@ -83,32 +83,32 @@ class _ForecastCardState extends State<ForecastCard> {
                             children: [
                               if (_isDaily)
                                 _MoreInfoLine(
-                                  label: AppLocalizations.of(context)!.tempNight,
+                                  label: I10n.current.tempNight,
                                   value: _forecast.tempNight!,
                                 ),
                               _MoreInfoLine(
-                                label: AppLocalizations.of(context)!.feelsLike,
+                                label: I10n.current.feelsLike,
                                 value: _forecast.feelsLike,
                               ),
                               if (_isDaily)
                                 _MoreInfoLine(
-                                  label: AppLocalizations.of(context)!.feelsLikeNight,
+                                  label: I10n.current.feelsLikeNight,
                                   value: _forecast.feelsLikeNight!,
                                 ),
                               _MoreInfoLine(
-                                label: AppLocalizations.of(context)!.windSpeed,
+                                label: I10n.current.windSpeed,
                                 value: _forecast.windSpeed.toString(),
                               ),
                               _MoreInfoLine(
-                                label: AppLocalizations.of(context)!.humidity,
+                                label: I10n.current.humidity,
                                 value: _forecast.humidity.toString(),
                               ),
                               _MoreInfoLine(
-                                label: AppLocalizations.of(context)!.pressure,
+                                label: I10n.current.pressure,
                                 value: _forecast.pressure.toString(),
                               ),
                               _MoreInfoLine(
-                                label: AppLocalizations.of(context)!.dewPoint,
+                                label: I10n.current.dewPoint,
                                 value: _forecast.dewPoint.toString(),
                               ),
                             ],

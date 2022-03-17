@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:weather/core/app_config.dart';
-import 'package:weather/core/errors/exceptions.dart';
-
+import '/core/app_config.dart';
+import '/core/errors/exceptions.dart';
+import '/core/localization/generated/l10n.dart';
 import '/core/errors/error_object.dart';
 import '/l_domain/entities/city.dart';
 import '/l_domain/entities/forecast.dart';
@@ -47,7 +47,6 @@ class WeatherCubit extends Cubit<WeatherState> {
         emit(WeatherState.error(ErrorObject(e)));
         position = Position.fromMap({...AppConfig.defaultPosition});
       }
-      print('==pos: $position');
       final weather = await weatherRepository.getWeather(position.latitude, position.longitude);
       _weatherLoaded = weather;
       _returnListByView();
@@ -89,20 +88,19 @@ class WeatherCubit extends Cubit<WeatherState> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      throw const GeoLocationException('Location services are disabled.');
+      throw GeoLocationException(I10n.current.errGeoLocService);
     }
 
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        throw const GeoLocationException('Location permissions are denied');
+        throw GeoLocationException(I10n.current.errGeoLocPermissionDenied);
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      throw const GeoLocationException(
-          'Location permissions are permanently denied, we cannot request permissions.');
+      throw GeoLocationException(I10n.current.errGeoLocPermissionDeniedForever);
     }
 
     return await Geolocator.getCurrentPosition();

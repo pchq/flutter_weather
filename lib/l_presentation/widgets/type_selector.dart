@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import '/core/localization/generated/l10n.dart';
 import '/l_domain/bloc/weather/weather_cubit.dart' show WeatherView;
 
 class TypeSelector extends StatelessWidget {
@@ -33,10 +32,10 @@ class TypeSelector extends StatelessWidget {
           String name;
           switch (choice) {
             case WeatherView.daily:
-              name = AppLocalizations.of(context)!.daily;
+              name = I10n.current.daily;
               break;
             case WeatherView.hourly:
-              name = AppLocalizations.of(context)!.hourly;
+              name = I10n.current.hourly;
               break;
           }
 
