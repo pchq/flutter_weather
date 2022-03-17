@@ -1,0 +1,15 @@
+{
+    "hourly": "По часам",
+    "daily": "По дням",
+    "temp": "Днем",
+    "tempNight": "Ночью",
+    "feelsLike": "Ощущается днем",
+    "feelsLikeNight": "Ощущается ночью",
+    "pressure": "Давление",
+    "humidity": "Влажность",
+    "dewPoint": "Точка росы",
+    "windSpeed": "Скорость ветра",
+    "settings": "Настройки"
+
+
+}
