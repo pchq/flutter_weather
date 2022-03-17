@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "_": MessageLookupByLibrary.simpleMessage(""),
         "daily": MessageLookupByLibrary.simpleMessage("Daily"),
         "dewPoint": MessageLookupByLibrary.simpleMessage("Dew point"),
         "errAuth": MessageLookupByLibrary.simpleMessage("Authorization error"),
@@ -35,17 +34,23 @@ class MessageLookup extends MessageLookupByLibrary {
             "Location permissions are permanently denied, we cannot request permissions"),
         "errGeoLocService": MessageLookupByLibrary.simpleMessage(
             "Location services are disabled"),
+        "errLocalData": MessageLookupByLibrary.simpleMessage(
+            "There is no saved data on the device"),
         "errServer": MessageLookupByLibrary.simpleMessage("Server error"),
         "errUnknown": MessageLookupByLibrary.simpleMessage("Unknown error"),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
         "feelsLike": MessageLookupByLibrary.simpleMessage("Feels like daytime"),
         "feelsLikeNight":
             MessageLookupByLibrary.simpleMessage("Feels like nighttime"),
         "hourly": MessageLookupByLibrary.simpleMessage("Hourly"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
         "pressure": MessageLookupByLibrary.simpleMessage("Pressure"),
+        "pressureUnit": MessageLookupByLibrary.simpleMessage("hPa"),
+        "reload": MessageLookupByLibrary.simpleMessage("Reload"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "temp": MessageLookupByLibrary.simpleMessage("Daytime"),
         "tempNight": MessageLookupByLibrary.simpleMessage("Nighttime"),
-        "windSpeed": MessageLookupByLibrary.simpleMessage("Wind Speed")
+        "windSpeed": MessageLookupByLibrary.simpleMessage("Wind Speed"),
+        "windSpeedUnit": MessageLookupByLibrary.simpleMessage("m/s")
       };
 }

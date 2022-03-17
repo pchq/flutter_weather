@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '/l_domain/entities/forecast.dart';
 import '/l_presentation/widgets/forecast_card.dart';
 

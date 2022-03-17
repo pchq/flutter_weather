@@ -10,7 +10,7 @@ class OptionsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(I10n.current.settings),
       ),
-      body: null,
+      body: const Center(child: Text('coming soon...')),
     );
   }
 }

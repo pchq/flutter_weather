@@ -17,6 +17,6 @@ _$_ApiReport _$$_ApiReportFromJson(Map<String, dynamic> json) => _$_ApiReport(
 
 Map<String, dynamic> _$$_ApiReportToJson(_$_ApiReport instance) =>
     <String, dynamic>{
-      'hourly': instance.hourly,
-      'daily': instance.daily,
+      'hourly': instance.hourly.map((e) => e.toJson()).toList(),
+      'daily': instance.daily.map((e) => e.toJson()).toList(),
     };

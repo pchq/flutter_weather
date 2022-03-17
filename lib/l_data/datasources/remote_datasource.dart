@@ -35,13 +35,13 @@ class RemoteDatasource implements IRemoteDatasource {
       if (response.statusCode == 200) {
         return response.data;
       } else {
-        throw ServerException();
+        throw const ServerException();
       }
     } catch (e) {
       if (e is ServerException) {
         rethrow;
       } else {
-        throw NoConnectionException();
+        throw const NoConnectionException();
       }
     }
   }
@@ -57,7 +57,7 @@ class RemoteDatasource implements IRemoteDatasource {
           data['daily'].map<ApiForecast>((item) => ApiForecast.fromJson(item)).toList();
       return ApiReport(hourly: hourly, daily: daily);
     } catch (e) {
-      throw DataParsingException();
+      throw const DataParsingException();
     }
   }
 
@@ -68,7 +68,7 @@ class RemoteDatasource implements IRemoteDatasource {
       final ApiCity city = ApiCity.fromJson(data[0]);
       return city;
     } catch (e) {
-      throw DataParsingException();
+      throw const DataParsingException();
     }
   }
 }

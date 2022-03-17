@@ -7,6 +7,7 @@ part 'api_forecast.g.dart';
 class ApiForecast with _$ApiForecast {
   const ApiForecast._();
 
+  @JsonSerializable(explicitToJson: true)
   const factory ApiForecast({
     @JsonKey(name: 'dt') required int datetime,
     required dynamic temp,

@@ -38,6 +38,8 @@ class WeatherCubit extends Cubit<WeatherState> {
   void load() async {
     if (state is _Loading) return;
 
+    _weatherLoaded = null;
+
     try {
       emit(const WeatherState.loading());
       Position position;
@@ -48,6 +50,9 @@ class WeatherCubit extends Cubit<WeatherState> {
         position = Position.fromMap({...AppConfig.defaultPosition});
       }
       final weather = await weatherRepository.getWeather(position.latitude, position.longitude);
+      if (weather.isLocalData) {
+        emit(WeatherState.error(ErrorObject(const NoConnectionException())));
+      }
       _weatherLoaded = weather;
       _returnListByView();
     } catch (e) {
@@ -63,6 +68,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     _returnListByView();
   }
 
+  /// данные в зависимости от вида
   void _returnListByView() {
     if (_weatherLoaded == null) return;
 
@@ -82,6 +88,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     }
   }
 
+  /// определение геолокации
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;

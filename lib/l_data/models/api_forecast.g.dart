@@ -29,7 +29,7 @@ Map<String, dynamic> _$$_ApiForecastToJson(_$_ApiForecast instance) =>
       'humidity': instance.humidity,
       'dew_point': instance.dewPoint,
       'wind_speed': instance.windSpeed,
-      'weather': instance.weatherCondition,
+      'weather': instance.weatherCondition.map((e) => e.toJson()).toList(),
     };
 
 _$__WeatherCondition _$$__WeatherConditionFromJson(Map<String, dynamic> json) =>

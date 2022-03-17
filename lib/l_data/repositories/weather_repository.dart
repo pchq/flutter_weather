@@ -1,5 +1,8 @@
+import 'package:weather/core/errors/exceptions.dart';
 import 'package:weather/l_data/mappers/city_mapper.dart';
 import 'package:weather/l_data/mappers/forecast_mapper.dart';
+import 'package:weather/l_data/models/api_city.dart';
+import 'package:weather/l_data/models/api_report.dart';
 
 import '/l_data/services/network_info.dart';
 import '/l_data/datasources/local_datasource.dart';
@@ -21,26 +24,34 @@ class WeatherRepository implements IWeatherRepository {
   @override
   Future<WeatherReport> getWeather(double lat, double lon) async {
     bool isConnected = await network.isConnected;
+    ApiCity city;
+    ApiReport weather;
+
+    /// загрузка из сети
     if (isConnected) {
       try {
-        final city = await remoteDatasource.getCity(lat, lon);
-        final weather = await remoteDatasource.getWeather(lat, lon);
+        city = await remoteDatasource.getCity(lat, lon);
+        weather = await remoteDatasource.getWeather(lat, lon);
 
-        return WeatherReport(
-          city: CityMapper()(city),
-          hourly: weather.hourly.map((e) => WeatherForecastMapper()(e)).toList(),
-          daily: weather.daily.map((e) => WeatherForecastMapper()(e)).toList(),
-        );
+        localDatasource.saveReport(city: city, weather: weather);
       } catch (e) {
-        throw Exception(e);
+        throw DataParsingException(e);
       }
     } else {
+      /// загрузка из кэша, если нет сети
       try {
-        final lastReport = await localDatasource.getLastReport();
-        return lastReport;
+        city = localDatasource.city;
+        weather = localDatasource.weather;
       } catch (e) {
-        throw Exception(e);
+        throw LocalDataException(e);
       }
     }
+
+    return WeatherReport(
+      city: CityMapper()(city),
+      hourly: weather.hourly.map((e) => WeatherForecastMapper()(e)).toList(),
+      daily: weather.daily.map((e) => WeatherForecastMapper()(e)).toList(),
+      isLocalData: !isConnected,
+    );
   }
 }

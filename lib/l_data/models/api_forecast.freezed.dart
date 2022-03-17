@@ -228,7 +228,8 @@ class __$ApiForecastCopyWithImpl<$Res> extends _$ApiForecastCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_ApiForecast extends _ApiForecast {
   const _$_ApiForecast(
       {@JsonKey(name: 'dt') required this.datetime,

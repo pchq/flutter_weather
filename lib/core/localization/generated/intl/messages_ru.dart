@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "_": MessageLookupByLibrary.simpleMessage(""),
         "daily": MessageLookupByLibrary.simpleMessage("По дням"),
         "dewPoint": MessageLookupByLibrary.simpleMessage("Точка росы"),
         "errAuth": MessageLookupByLibrary.simpleMessage("Ошибка авторизации"),
@@ -35,18 +34,24 @@ class MessageLookup extends MessageLookupByLibrary {
             "Разрешения на определение местоположения навсегда отклонены, мы не можем запросить разрешения"),
         "errGeoLocService": MessageLookupByLibrary.simpleMessage(
             "Определение местоположения отключено"),
+        "errLocalData": MessageLookupByLibrary.simpleMessage(
+            "Сохраненные данные не найдены"),
         "errServer": MessageLookupByLibrary.simpleMessage("Ошибка сервера"),
         "errUnknown":
             MessageLookupByLibrary.simpleMessage("Неизвестная ошибка"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "feelsLike": MessageLookupByLibrary.simpleMessage("Ощущается днем"),
         "feelsLikeNight":
             MessageLookupByLibrary.simpleMessage("Ощущается ночью"),
         "hourly": MessageLookupByLibrary.simpleMessage("По часам"),
         "humidity": MessageLookupByLibrary.simpleMessage("Влажность"),
         "pressure": MessageLookupByLibrary.simpleMessage("Давление"),
+        "pressureUnit": MessageLookupByLibrary.simpleMessage("гПа"),
+        "reload": MessageLookupByLibrary.simpleMessage("Перезагрузить"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "temp": MessageLookupByLibrary.simpleMessage("Днем"),
         "tempNight": MessageLookupByLibrary.simpleMessage("Ночью"),
-        "windSpeed": MessageLookupByLibrary.simpleMessage("Скорость ветра")
+        "windSpeed": MessageLookupByLibrary.simpleMessage("Скорость ветра"),
+        "windSpeedUnit": MessageLookupByLibrary.simpleMessage("м/с")
       };
 }

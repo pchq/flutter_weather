@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '/l_data/datasources/local_datasource.dart';
 import '/l_data/datasources/remote_datasource.dart';
 import '/l_data/repositories/weather_repository.dart';
@@ -17,7 +18,7 @@ class ServiceProvider {
 
   static final I = ServiceProvider();
 
-  void init() {
+  Future<void> init() async {
     /// routing
     _getIt.registerLazySingleton<AppRouter>(
       () => AppRouter(),
@@ -40,7 +41,7 @@ class ServiceProvider {
       () => RemoteDatasource(dio: _getIt()),
     );
     _getIt.registerLazySingleton<ILocalDatasource>(
-      () => LocalDatasource(),
+      () => LocalDatasource(localDb: _getIt()),
     );
     _getIt.registerLazySingleton<INetworkInfo>(
       () => NetworkInfo(connectivity: _getIt()),
@@ -52,6 +53,10 @@ class ServiceProvider {
     );
     _getIt.registerLazySingleton<Connectivity>(
       () => Connectivity(),
+    );
+    final _sharedPreferences = await SharedPreferences.getInstance();
+    _getIt.registerLazySingleton(
+      () => _sharedPreferences,
     );
   }
 }

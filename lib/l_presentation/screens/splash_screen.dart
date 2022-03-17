@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather/routing/app_router.dart';
+import '/routing/app_router.dart';
 import 'package:get_it/get_it.dart';
 
 class SplashScreen extends StatelessWidget {

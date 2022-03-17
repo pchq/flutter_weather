@@ -8,8 +8,16 @@ part 'weather_report.freezed.dart';
 @freezed
 class WeatherReport with _$WeatherReport {
   const factory WeatherReport({
+    /// город
     required City city,
+
+    /// погода по часам
     required List<Forecast> hourly,
+
+    /// погода по дням
     required List<Forecast> daily,
+
+    /// загружено из локального хранилища
+    required bool isLocalData,
   }) = _WeatherReport;
 }

@@ -21,11 +21,13 @@ class _$WeatherReportTearOff {
   _WeatherReport call(
       {required City city,
       required List<Forecast> hourly,
-      required List<Forecast> daily}) {
+      required List<Forecast> daily,
+      required bool isLocalData}) {
     return _WeatherReport(
       city: city,
       hourly: hourly,
       daily: daily,
+      isLocalData: isLocalData,
     );
   }
 }
@@ -35,9 +37,17 @@ const $WeatherReport = _$WeatherReportTearOff();
 
 /// @nodoc
 mixin _$WeatherReport {
+  /// город
   City get city => throw _privateConstructorUsedError;
+
+  /// погода по часам
   List<Forecast> get hourly => throw _privateConstructorUsedError;
+
+  /// погода по дням
   List<Forecast> get daily => throw _privateConstructorUsedError;
+
+  /// загружено из локального хранилища
+  bool get isLocalData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WeatherReportCopyWith<WeatherReport> get copyWith =>
@@ -49,7 +59,11 @@ abstract class $WeatherReportCopyWith<$Res> {
   factory $WeatherReportCopyWith(
           WeatherReport value, $Res Function(WeatherReport) then) =
       _$WeatherReportCopyWithImpl<$Res>;
-  $Res call({City city, List<Forecast> hourly, List<Forecast> daily});
+  $Res call(
+      {City city,
+      List<Forecast> hourly,
+      List<Forecast> daily,
+      bool isLocalData});
 
   $CityCopyWith<$Res> get city;
 }
@@ -68,6 +82,7 @@ class _$WeatherReportCopyWithImpl<$Res>
     Object? city = freezed,
     Object? hourly = freezed,
     Object? daily = freezed,
+    Object? isLocalData = freezed,
   }) {
     return _then(_value.copyWith(
       city: city == freezed
@@ -82,6 +97,10 @@ class _$WeatherReportCopyWithImpl<$Res>
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
               as List<Forecast>,
+      isLocalData: isLocalData == freezed
+          ? _value.isLocalData
+          : isLocalData // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -100,7 +119,11 @@ abstract class _$WeatherReportCopyWith<$Res>
           _WeatherReport value, $Res Function(_WeatherReport) then) =
       __$WeatherReportCopyWithImpl<$Res>;
   @override
-  $Res call({City city, List<Forecast> hourly, List<Forecast> daily});
+  $Res call(
+      {City city,
+      List<Forecast> hourly,
+      List<Forecast> daily,
+      bool isLocalData});
 
   @override
   $CityCopyWith<$Res> get city;
@@ -122,6 +145,7 @@ class __$WeatherReportCopyWithImpl<$Res>
     Object? city = freezed,
     Object? hourly = freezed,
     Object? daily = freezed,
+    Object? isLocalData = freezed,
   }) {
     return _then(_WeatherReport(
       city: city == freezed
@@ -136,6 +160,10 @@ class __$WeatherReportCopyWithImpl<$Res>
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
               as List<Forecast>,
+      isLocalData: isLocalData == freezed
+          ? _value.isLocalData
+          : isLocalData // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -144,18 +172,31 @@ class __$WeatherReportCopyWithImpl<$Res>
 
 class _$_WeatherReport implements _WeatherReport {
   const _$_WeatherReport(
-      {required this.city, required this.hourly, required this.daily});
+      {required this.city,
+      required this.hourly,
+      required this.daily,
+      required this.isLocalData});
 
   @override
+
+  /// город
   final City city;
   @override
+
+  /// погода по часам
   final List<Forecast> hourly;
   @override
+
+  /// погода по дням
   final List<Forecast> daily;
+  @override
+
+  /// загружено из локального хранилища
+  final bool isLocalData;
 
   @override
   String toString() {
-    return 'WeatherReport(city: $city, hourly: $hourly, daily: $daily)';
+    return 'WeatherReport(city: $city, hourly: $hourly, daily: $daily, isLocalData: $isLocalData)';
   }
 
   @override
@@ -165,7 +206,9 @@ class _$_WeatherReport implements _WeatherReport {
             other is _WeatherReport &&
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality().equals(other.hourly, hourly) &&
-            const DeepCollectionEquality().equals(other.daily, daily));
+            const DeepCollectionEquality().equals(other.daily, daily) &&
+            const DeepCollectionEquality()
+                .equals(other.isLocalData, isLocalData));
   }
 
   @override
@@ -173,7 +216,8 @@ class _$_WeatherReport implements _WeatherReport {
       runtimeType,
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(hourly),
-      const DeepCollectionEquality().hash(daily));
+      const DeepCollectionEquality().hash(daily),
+      const DeepCollectionEquality().hash(isLocalData));
 
   @JsonKey(ignore: true)
   @override
@@ -185,14 +229,25 @@ abstract class _WeatherReport implements WeatherReport {
   const factory _WeatherReport(
       {required City city,
       required List<Forecast> hourly,
-      required List<Forecast> daily}) = _$_WeatherReport;
+      required List<Forecast> daily,
+      required bool isLocalData}) = _$_WeatherReport;
 
   @override
+
+  /// город
   City get city;
   @override
+
+  /// погода по часам
   List<Forecast> get hourly;
   @override
+
+  /// погода по дням
   List<Forecast> get daily;
+  @override
+
+  /// загружено из локального хранилища
+  bool get isLocalData;
   @override
   @JsonKey(ignore: true)
   _$WeatherReportCopyWith<_WeatherReport> get copyWith =>

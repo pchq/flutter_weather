@@ -1,12 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather/l_domain/bloc/weather/weather_cubit.dart';
-import 'package:weather/l_domain/entities/forecast.dart';
-import 'package:weather/l_presentation/widgets/forecasts_list.dart';
-import 'package:weather/l_presentation/widgets/loading_indicator.dart';
-import 'package:weather/l_presentation/widgets/type_selector.dart';
-import 'package:weather/routing/app_router.dart';
+import '/core/localization/generated/l10n.dart';
+import '/l_domain/bloc/weather/weather_cubit.dart';
+import '/l_domain/entities/forecast.dart';
+import '/l_presentation/app_theme.dart';
+import '/l_presentation/widgets/forecasts_list.dart';
+import '/l_presentation/widgets/loading_indicator.dart';
+import '/l_presentation/widgets/type_selector.dart';
+import '/routing/app_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +17,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = context.read<WeatherCubit>();
     final String languageCode = Localizations.localeOf(context).languageCode;
-    print('===build:');
     bool isLoading = false;
     WeatherView currentView = bloc.currentView;
     List<Forecast> forecasts = [];
@@ -67,10 +68,29 @@ class HomeScreen extends StatelessWidget {
           ),
           body: isLoading
               ? const LoadingIndicator()
-              : SingleChildScrollView(
-                  child: ForecastsList(
-                    key: Key(currentView.name),
-                    list: forecasts,
+              : RefreshIndicator(
+                  onRefresh: () async {
+                    bloc.load();
+                  },
+                  child: SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: forecasts.isEmpty
+                        ? SizedBox(
+                            height: MediaQuery.of(context).size.height * .8,
+                            child: Center(
+                              child: MaterialButton(
+                                child: Text(I10n.current.reload),
+                                color: AppTheme.colorPrimary,
+                                onPressed: () {
+                                  bloc.load();
+                                },
+                              ),
+                            ),
+                          )
+                        : ForecastsList(
+                            key: Key(currentView.name),
+                            list: forecasts,
+                          ),
                   ),
                 ),
         );

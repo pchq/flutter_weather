@@ -120,6 +120,16 @@ class I10n {
     );
   }
 
+  /// `hPa`
+  String get pressureUnit {
+    return Intl.message(
+      'hPa',
+      name: 'pressureUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Humidity`
   String get humidity {
     return Intl.message(
@@ -150,11 +160,41 @@ class I10n {
     );
   }
 
+  /// `m/s`
+  String get windSpeedUnit {
+    return Intl.message(
+      'm/s',
+      name: 'windSpeedUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Settings`
   String get settings {
     return Intl.message(
       'Settings',
       name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reload`
+  String get reload {
+    return Intl.message(
+      'Reload',
+      name: 'reload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
       desc: '',
       args: [],
     );
@@ -240,17 +280,17 @@ class I10n {
     );
   }
 
-  // skipped getter for the '' key
-
-  /// ``
-  String get _ {
+  /// `There is no saved data on the device`
+  String get errLocalData {
     return Intl.message(
-      '',
-      name: '_',
+      'There is no saved data on the device',
+      name: 'errLocalData',
       desc: '',
       args: [],
     );
   }
+
+  // skipped getter for the '' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {

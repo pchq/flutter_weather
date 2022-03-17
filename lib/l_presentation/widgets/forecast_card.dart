@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '/core/localization/generated/l10n.dart';
 import 'package:intl/intl.dart';
-import 'package:weather/l_presentation/app_theme.dart';
-
+import '/core/localization/generated/l10n.dart';
 import '/l_domain/entities/forecast.dart';
+import '/l_presentation/app_theme.dart';
 
 class ForecastCard extends StatefulWidget {
   final Forecast forecast;
@@ -61,7 +60,7 @@ class _ForecastCardState extends State<ForecastCard> {
               children: [
                 Text(
                   _buildDate(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     color: AppTheme.colorPrimary,
                   ),
@@ -73,7 +72,7 @@ class _ForecastCardState extends State<ForecastCard> {
                       children: [
                         Text(
                           _forecast.temp,
-                          style: TextStyle(fontSize: 32, height: 2),
+                          style: const TextStyle(fontSize: 32, height: 2),
                         ),
                         const SizedBox(height: 10),
                         Visibility(
@@ -117,13 +116,14 @@ class _ForecastCardState extends State<ForecastCard> {
                       ],
                     ),
                     const Spacer(),
-                    // todo: file | network
-
                     AnimatedSize(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       child: Image.network(
                         _forecast.icon,
                         width: _isActive ? 120 : 80,
+                        errorBuilder: (context, error, stackTrace) {
+                          return const Icon(Icons.image_not_supported);
+                        },
                       ),
                     ),
                   ],
@@ -154,16 +154,18 @@ class _MoreInfoLine extends StatelessWidget {
         children: [
           Text(
             '$label:',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               color: AppTheme.colorGrey,
             ),
           ),
           const SizedBox(width: 10),
-          Text(value,
-              style: TextStyle(
-                fontSize: 14,
-              )),
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 14,
+            ),
+          ),
         ],
       ),
     );

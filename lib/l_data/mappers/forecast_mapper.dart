@@ -1,3 +1,4 @@
+import '/core/localization/generated/l10n.dart';
 import '/l_data/models/api_forecast.dart';
 import '/l_domain/entities/forecast.dart';
 
@@ -12,10 +13,10 @@ class WeatherForecastMapper implements IMapper<ApiForecast, Forecast> {
       tempNight: _normalizeTemp(apiModel.temp, 'night'),
       feelsLike: _normalizeTemp(apiModel.feelsLike, 'day')!,
       feelsLikeNight: _normalizeTemp(apiModel.feelsLike, 'night'),
-      pressure: '${apiModel.pressure} hPa',
+      pressure: '${apiModel.pressure} ${I10n.current.pressureUnit}',
       humidity: '${apiModel.humidity} %',
       dewPoint: _normalizeTemp(apiModel.dewPoint)!,
-      windSpeed: '${apiModel.windSpeed.round()} m/s',
+      windSpeed: '${apiModel.windSpeed.round()} ${I10n.current.windSpeedUnit}',
       weatherConditionId: apiModel.weatherCondition[0].id,
       icon: 'https://openweathermap.org/img/wn/${apiModel.weatherCondition[0].icon}@4x.png',
     );

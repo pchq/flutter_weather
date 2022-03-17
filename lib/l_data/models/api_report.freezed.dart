@@ -119,7 +119,8 @@ class __$ApiReportCopyWithImpl<$Res> extends _$ApiReportCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_ApiReport extends _ApiReport {
   const _$_ApiReport({required this.hourly, required this.daily}) : super._();
 

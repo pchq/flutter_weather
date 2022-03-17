@@ -32,9 +32,12 @@ class ErrorObject {
             message = I10n.current.errUnknown;
           }
         },
+        localData: (error) {
+          message = I10n.current.errLocalData;
+        },
       );
     } else {
-      message = I10n.current.errUnknown;
+      message = '${I10n.current.error}: ${exception.toString()}';
     }
   }
 }

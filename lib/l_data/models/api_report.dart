@@ -9,6 +9,7 @@ part 'api_report.g.dart';
 class ApiReport with _$ApiReport {
   const ApiReport._();
 
+  @JsonSerializable(explicitToJson: true)
   const factory ApiReport({
     required List<ApiForecast> hourly,
     required List<ApiForecast> daily,

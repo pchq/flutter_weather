@@ -6,12 +6,15 @@
     "feelsLike": "Feels like daytime",
     "feelsLikeNight": "Feels like nighttime",
     "pressure": "Pressure",
+    "pressureUnit": "hPa",
     "humidity": "Humidity",
     "dewPoint": "Dew point",
     "windSpeed": "Wind Speed",
+    "windSpeedUnit": "m/s",
     "settings": "Settings",
+    "reload": "Reload",
     
-    // errors
+    "error": "Error",
     "errServer": "Server error",
     "errDataParsing": "Data error",
     "errConnection": "Connection error",
@@ -20,10 +23,8 @@
     "errGeoLocService": "Location services are disabled",
     "errGeoLocPermissionDenied": "Location permissions are denied",
     "errGeoLocPermissionDeniedForever": "Location permissions are permanently denied, we cannot request permissions",
-    
-    "": "",
+    "errLocalData": "There is no saved data on the device",
 
 
-
-    "_": ""
+    "": ""
 }

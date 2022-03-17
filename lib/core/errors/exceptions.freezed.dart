@@ -47,6 +47,12 @@ class _$AppExceptionTearOff {
       error,
     );
   }
+
+  LocalDataException localData([Object? error]) {
+    return LocalDataException(
+      error,
+    );
+  }
 }
 
 /// @nodoc
@@ -63,6 +69,7 @@ mixin _$AppException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +79,7 @@ mixin _$AppException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +89,7 @@ mixin _$AppException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,6 +100,7 @@ mixin _$AppException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +110,7 @@ mixin _$AppException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,6 +120,7 @@ mixin _$AppException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -213,6 +225,7 @@ class _$ServerException implements ServerException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) {
     return server(error);
   }
@@ -225,6 +238,7 @@ class _$ServerException implements ServerException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) {
     return server?.call(error);
   }
@@ -237,6 +251,7 @@ class _$ServerException implements ServerException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -253,6 +268,7 @@ class _$ServerException implements ServerException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) {
     return server(this);
   }
@@ -265,6 +281,7 @@ class _$ServerException implements ServerException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) {
     return server?.call(this);
   }
@@ -277,6 +294,7 @@ class _$ServerException implements ServerException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -367,6 +385,7 @@ class _$DataParsingException implements DataParsingException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) {
     return dataParsing(error);
   }
@@ -379,6 +398,7 @@ class _$DataParsingException implements DataParsingException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) {
     return dataParsing?.call(error);
   }
@@ -391,6 +411,7 @@ class _$DataParsingException implements DataParsingException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) {
     if (dataParsing != null) {
@@ -407,6 +428,7 @@ class _$DataParsingException implements DataParsingException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) {
     return dataParsing(this);
   }
@@ -419,6 +441,7 @@ class _$DataParsingException implements DataParsingException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) {
     return dataParsing?.call(this);
   }
@@ -431,6 +454,7 @@ class _$DataParsingException implements DataParsingException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) {
     if (dataParsing != null) {
@@ -521,6 +545,7 @@ class _$NoConnectionException implements NoConnectionException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) {
     return noConnection(error);
   }
@@ -533,6 +558,7 @@ class _$NoConnectionException implements NoConnectionException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) {
     return noConnection?.call(error);
   }
@@ -545,6 +571,7 @@ class _$NoConnectionException implements NoConnectionException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -561,6 +588,7 @@ class _$NoConnectionException implements NoConnectionException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) {
     return noConnection(this);
   }
@@ -573,6 +601,7 @@ class _$NoConnectionException implements NoConnectionException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) {
     return noConnection?.call(this);
   }
@@ -585,6 +614,7 @@ class _$NoConnectionException implements NoConnectionException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -674,6 +704,7 @@ class _$AuthException implements AuthException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) {
     return auth(error);
   }
@@ -686,6 +717,7 @@ class _$AuthException implements AuthException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) {
     return auth?.call(error);
   }
@@ -698,6 +730,7 @@ class _$AuthException implements AuthException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -714,6 +747,7 @@ class _$AuthException implements AuthException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) {
     return auth(this);
   }
@@ -726,6 +760,7 @@ class _$AuthException implements AuthException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) {
     return auth?.call(this);
   }
@@ -738,6 +773,7 @@ class _$AuthException implements AuthException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -828,6 +864,7 @@ class _$GeoLocationException implements GeoLocationException {
     required TResult Function(Object? error) noConnection,
     required TResult Function(Object? error) auth,
     required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
   }) {
     return geoLocation(error);
   }
@@ -840,6 +877,7 @@ class _$GeoLocationException implements GeoLocationException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
   }) {
     return geoLocation?.call(error);
   }
@@ -852,6 +890,7 @@ class _$GeoLocationException implements GeoLocationException {
     TResult Function(Object? error)? noConnection,
     TResult Function(Object? error)? auth,
     TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
     required TResult orElse(),
   }) {
     if (geoLocation != null) {
@@ -868,6 +907,7 @@ class _$GeoLocationException implements GeoLocationException {
     required TResult Function(NoConnectionException value) noConnection,
     required TResult Function(AuthException value) auth,
     required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
   }) {
     return geoLocation(this);
   }
@@ -880,6 +920,7 @@ class _$GeoLocationException implements GeoLocationException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
   }) {
     return geoLocation?.call(this);
   }
@@ -892,6 +933,7 @@ class _$GeoLocationException implements GeoLocationException {
     TResult Function(NoConnectionException value)? noConnection,
     TResult Function(AuthException value)? auth,
     TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
     required TResult orElse(),
   }) {
     if (geoLocation != null) {
@@ -909,5 +951,164 @@ abstract class GeoLocationException implements AppException {
   @override
   @JsonKey(ignore: true)
   $GeoLocationExceptionCopyWith<GeoLocationException> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocalDataExceptionCopyWith<$Res>
+    implements $AppExceptionCopyWith<$Res> {
+  factory $LocalDataExceptionCopyWith(
+          LocalDataException value, $Res Function(LocalDataException) then) =
+      _$LocalDataExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({Object? error});
+}
+
+/// @nodoc
+class _$LocalDataExceptionCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res>
+    implements $LocalDataExceptionCopyWith<$Res> {
+  _$LocalDataExceptionCopyWithImpl(
+      LocalDataException _value, $Res Function(LocalDataException) _then)
+      : super(_value, (v) => _then(v as LocalDataException));
+
+  @override
+  LocalDataException get _value => super._value as LocalDataException;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(LocalDataException(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocalDataException implements LocalDataException {
+  const _$LocalDataException([this.error]);
+
+  @override
+  final Object? error;
+
+  @override
+  String toString() {
+    return 'AppException.localData(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LocalDataException &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $LocalDataExceptionCopyWith<LocalDataException> get copyWith =>
+      _$LocalDataExceptionCopyWithImpl<LocalDataException>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Object? error) server,
+    required TResult Function(Object? error) dataParsing,
+    required TResult Function(Object? error) noConnection,
+    required TResult Function(Object? error) auth,
+    required TResult Function(Object? error) geoLocation,
+    required TResult Function(Object? error) localData,
+  }) {
+    return localData(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
+  }) {
+    return localData?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Object? error)? server,
+    TResult Function(Object? error)? dataParsing,
+    TResult Function(Object? error)? noConnection,
+    TResult Function(Object? error)? auth,
+    TResult Function(Object? error)? geoLocation,
+    TResult Function(Object? error)? localData,
+    required TResult orElse(),
+  }) {
+    if (localData != null) {
+      return localData(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerException value) server,
+    required TResult Function(DataParsingException value) dataParsing,
+    required TResult Function(NoConnectionException value) noConnection,
+    required TResult Function(AuthException value) auth,
+    required TResult Function(GeoLocationException value) geoLocation,
+    required TResult Function(LocalDataException value) localData,
+  }) {
+    return localData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerException value)? server,
+    TResult Function(DataParsingException value)? dataParsing,
+    TResult Function(NoConnectionException value)? noConnection,
+    TResult Function(AuthException value)? auth,
+    TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
+  }) {
+    return localData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerException value)? server,
+    TResult Function(DataParsingException value)? dataParsing,
+    TResult Function(NoConnectionException value)? noConnection,
+    TResult Function(AuthException value)? auth,
+    TResult Function(GeoLocationException value)? geoLocation,
+    TResult Function(LocalDataException value)? localData,
+    required TResult orElse(),
+  }) {
+    if (localData != null) {
+      return localData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocalDataException implements AppException {
+  const factory LocalDataException([Object? error]) = _$LocalDataException;
+
+  @override
+  Object? get error;
+  @override
+  @JsonKey(ignore: true)
+  $LocalDataExceptionCopyWith<LocalDataException> get copyWith =>
       throw _privateConstructorUsedError;
 }

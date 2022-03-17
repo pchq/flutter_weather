@@ -6,12 +6,15 @@
     "feelsLike": "Ощущается днем",
     "feelsLikeNight": "Ощущается ночью",
     "pressure": "Давление",
+    "pressureUnit": "гПа",
     "humidity": "Влажность",
     "dewPoint": "Точка росы",
     "windSpeed": "Скорость ветра",
+    "windSpeedUnit": "м/с",
     "settings": "Настройки",
+    "reload": "Перезагрузить",
 
-    // errors
+    "error": "Ошибка",
     "errServer": "Ошибка сервера",
     "errDataParsing": "Ошибка данных",
     "errConnection": "Ошибка соединения",
@@ -20,9 +23,9 @@
     "errGeoLocService": "Определение местоположения отключено",
     "errGeoLocPermissionDenied": "Отказано в доступе к местоположению",
     "errGeoLocPermissionDeniedForever": "Разрешения на определение местоположения навсегда отклонены, мы не можем запросить разрешения",
+    "errLocalData": "Сохраненные данные не найдены",
     
-    "": "",
 
 
-    "_": ""
+    "": ""
 }
